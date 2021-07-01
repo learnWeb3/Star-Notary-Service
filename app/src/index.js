@@ -1,6 +1,5 @@
 import Web3 from "web3";
 import starNotaryArtifact from "../../build/contracts/StarNotary.json";
-import detectEthereumProvider from "@metamask/detect-provider";
 
 const App = {
   web3: null,
@@ -21,7 +20,6 @@ const App = {
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
     } catch (error) {
-      console.log(error);
       console.error("Could not connect to contract or chain.");
     }
   },
@@ -36,7 +34,9 @@ const App = {
       const { createStar } = this.meta.methods;
       const name = document.getElementById("starName").value;
       const id = document.getElementById("starId").value;
+      this.loading("#createStar");
       await createStar(name, id).send({ from: this.account });
+      document.querySelector("#createStar").innerHTML = "Create Star";
       App.setStatus("New Star Owner is " + this.account + ".");
       this.flash(
         "Star succesfully minted and sent to your address !",
@@ -84,6 +84,27 @@ const App = {
     }
   },
 
+  loading: (selector) => {
+    const span1 = document.createElement("span");
+    const parent = document.querySelector(selector);
+    let attributesSpan1 = [
+      { name: "class", value: "spinner-border spinner-border-sm" },
+      {
+        name: "role",
+        value: "status",
+      },
+      {
+        name: "aria-hidden",
+        value: "true",
+      },
+    ];
+
+    attributesSpan1.map(({ name, value }) => span1.setAttribute(name, value));
+    document.querySelector(selector).innerHTML = "";
+    const text = document.createTextNode("Loading...");
+    [span1, text].map((element) => parent.appendChild(element));
+  },
+
   flash: (message, type) => {
     const alertContainer = document.querySelector("#alert-container");
     if (alertContainer) {
@@ -101,10 +122,8 @@ const App = {
 window.App = App;
 
 window.addEventListener("load", async function () {
-  const provider = await detectEthereumProvider();
-
-  if (provider) {
-    App.web3 = new Web3(provider);
+  if (window.ethereum) {
+    App.web3 = new Web3(window.ethereum);
     await window.ethereum.enable(); // get permission to access accounts
   } else {
     console.warn(

@@ -6,6 +6,38 @@
 
 This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
 
+1. Modify the StarNotary version 2 contract code to achieve the following:
+
+- [x] Add a name and a symbol for your starNotary tokens.
+- [x] Add a function lookUptokenIdToStarInfo, that looks up the stars using the Token ID, and then returns the name of the star.
+- [x] Add a function called exchangeStars, so 2 users can exchange their star tokens...Do not worry about the price, just write code to exchange stars between users.
+- [x] Write a function to Transfer a Star. The function should transfer a star from the address of the caller. The function should accept 2 arguments, the address to transfer the star to, and the token ID of the star.
+
+2. Add supporting unit tests, to test the following:
+
+- [x] The token name and token symbol are added properly.
+- [x] 2 users can exchange their stars.
+- [x] Stars Tokens can be transferred from one address to another.
+
+3. Deploy your Contract to Rinkeby
+
+- [x] Edit the truffle.config file to add settings to deploy your contract to the Rinkeby Public Network.
+
+4. Modify the front end of the DAPP to achieve the following:
+
+- [x] Lookup a star by ID using tokenIdToStarInfo() (you will have to add code for this in your index.html and index.js files)
+
+5. Project submission requirements
+
+- Inside your project folder, create a Readme.md file. The readme.md file should include the following:
+  - [x] Specify the Truffle version and OpenZeppelin version used in the project.
+  - [x] Your ERC-721 Token Name
+  - [x] Your ERC-721 Token Symbol
+  - [x] Your “Token Address” on the Rinkeby Network
+  - [x] Upload your folder to GitHub.
+
+Submit your GitHub Repository Link.
+
 ### Development environment
 
 Truffle: v5.3.13 (core: 5.3.13)
@@ -16,6 +48,7 @@ OpenZeppelin version: 2.3.0;
 ERC-721 Token Name : "Star"
 ERC-721 Token Symbol : "STR"
 Token Contract address on the Rinkeby Network : 0xB153c736faEe0ECE017eE40fE3B8D9A6e077CA8e
+Token Contract etherscan link: <https://rinkeby.etherscan.io/token/0xb153c736faee0ece017ee40fe3b8d9a6e077ca8e>
 
 ### Dependencies
 
