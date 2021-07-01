@@ -13,6 +13,35 @@ parcel src/index.html
 To run the application in PRODUCTION environment you will need to lauch a server reading app/dist/index.html
 
 
+### Quickstart
+
+#### Contract dependencies
+
+```bash
+# install packages
+npm i
+```
+
+#### Frontend app dependencies
+
+```bash
+cd app
+# install packages
+npm i
+```
+
+#### Run the contract tests
+
+```bash
+npm run test
+```
+
+
+#### Run the app
+
+To run the application in PRODUCTION environment you will need to lauch a server reading app/dist/index.html
+
+
 ### ToDo
 
 This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
@@ -94,6 +123,11 @@ truffle version
 4. **Other mandatory packages**:
 
 ```bash
+# install packages
+npm i
+```
+
+```bash
 cd app
 # install packages
 npm i
@@ -147,19 +181,6 @@ node index.js
 
 ## Troubleshoot
 
-#### Error 1
-
-```
-'webpack-dev-server' is not recognized as an internal or external command
-```
-
-**Solution:**
-
-- Delete the node_modules folder, the one within the /app folder
-- Execute `npm install` command from the /app folder
-
-After a long install, everything will work just fine!
-
 #### Error 2
 
 ```
@@ -178,12 +199,3 @@ compilers: {
     // ...
 ```
 
-## Raise a PR or report an Issue
-
-1. Feel free to raise a [Pull Request](https://github.com/udacity/nd1309-p2-Decentralized-Star-Notary-Service-Starter-Code/pulls) if you find a bug/scope of improvement in the current repository.
-
-2. If you have suggestions or facing issues, you can log in issue.
-
----
-
-Do not use the [Old depreacted zipped starter code](https://s3.amazonaws.com/video.udacity-data.com/topher/2019/January/5c51c4c0_project-5-starter-code/project-5-starter-code.zip)
