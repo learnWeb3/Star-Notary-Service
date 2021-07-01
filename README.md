@@ -101,6 +101,13 @@ npm i
 
 ### Run the application
 
+You need to create a .secret file a the root of the main directory containing your metamask secret key in order to execute the tests and deploy the contract.
+
+```bash
+touch .secret 
+```
+
+
 1. Start Truffle by running
 
 ```bash
